@@ -3,7 +3,6 @@ package soundPlayer;
 import java.util.ArrayList; 
 
 import java.io.File; 
-import java.io.FileFilter;
 
 import javafx.stage.Stage; 
 import javafx.stage.DirectoryChooser;
@@ -29,13 +28,27 @@ public class DirectoryReader
 
     /**
      * Return a list with all files in directory
+     * as ArrayList
      * @param directory directory to search 
-     * @param filter array of supported extensions
+     * @param filter list of supported extensions
      */
-    public static ArrayList<File> getFilesFromDirectory(File directory, String[] filter) //implementer filter her 
+    public static ArrayList<File> getFilesFromDirectory(File directory, ArrayList<String> filter) //implementer filter her 
     {
-        ArrayList<File> files = directory.listFiles(); 
-        for(File file : )
+        //i want an arraylist becuase they are easier to deal with
+        File[] unfiltered = directory.listFiles(); 
+        ArrayList<File> filtered = new ArrayList<File>(); 
+        
+        //pick only the files with right extensions 
+        for(int i = 0; i < unfiltered.length; i++)
+        {
+            for(String extension : filter)
+            {
+                String name = unfiltered[i].getName();
+                if(name.endsWith(extension))
+                    filtered.add(unfiltered[i]);
+            }
+        }
+        return filtered; 
     }
     
 }

@@ -1,6 +1,7 @@
 package soundPlayer;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 
 import java.io.File; 
 
@@ -11,7 +12,9 @@ import javafx.scene.Scene;
 import javafx.scene.layout.GridPane; 
 import javafx.scene.control.ListView;
 import javafx.scene.control.Label;
-import javafx.scene.control.Button; 
+import javafx.scene.control.Button;
+import javafx.scene.media.Media;
+import javafx.scene.media.MediaPlayer; 
 
 import javafx.event.ActionEvent; 
 
@@ -25,7 +28,7 @@ public class Client extends Application
     private Button chooseFolderButton; 
     private ListView fileList; 
     private ArrayList<Label> fileLabels; 
-    private String[] acceptedExtensions = {".mp3", ".flac"}; 
+    ArrayList<String> acceptedExtensions = new ArrayList<>(Arrays.asList("mp3", "flac"));
 
     public void start(Stage stage)
     {
@@ -34,7 +37,7 @@ public class Client extends Application
         chooseFolderButton= new Button("Choose Folder");
         chooseFolderButton.setOnAction(event -> {
             File directory = DirectoryReader.openDirectoryDialogue(stage);
-            updateList(directory); 
+            updateList(directory, acceptedExtensions); 
         }); 
 
         fileList = new ListView(); //add file representation here 
@@ -51,10 +54,13 @@ public class Client extends Application
     /**
      * update GUI-list based on given directory
      */
-    private void updateList(File directory)
+    private void updateList(File directory, ArrayList<String> acceptedExtensions)
     {
-        //only get 
         ArrayList<File> files = DirectoryReader.getFilesFromDirectory(directory, acceptedExtensions); 
-        
+        //print files 
+        for(File file : files)
+        {
+            System.out.println(file.getName()); 
+        }
     }
 }
