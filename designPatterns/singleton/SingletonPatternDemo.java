@@ -9,5 +9,8 @@ public class SingletonPatternDemo {
         SingleObject object2 = SingleObject.getInstance();
         object2.showMessage(); //is the same instance  
 
+        System.out.println("Are the objects the same?"); 
+        System.out.println(object.hashCode() == object2.hashCode()); 
+
     }
 }
