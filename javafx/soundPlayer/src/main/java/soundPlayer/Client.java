@@ -10,11 +10,11 @@ import javafx.stage.Stage;
 
 import javafx.scene.Scene;  
 import javafx.scene.layout.GridPane; 
-import javafx.scene.control.ListView;
 import javafx.scene.control.Label;
 import javafx.scene.control.Button;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer; 
+import javafx.scene.media.MediaView; 
 
 import javafx.event.ActionEvent; 
 
@@ -26,24 +26,17 @@ import javafx.event.ActionEvent;
 public class Client extends Application
 {
     private Button chooseFolderButton; 
-    private ListView fileList; 
-    private ArrayList<Label> fileLabels; 
     ArrayList<String> acceptedExtensions = new ArrayList<>(Arrays.asList("mp3", "flac"));
+    GridPane layout = new GridPane(); 
 
     public void start(Stage stage)
     {
-        GridPane layout = new GridPane(); 
-
         chooseFolderButton= new Button("Choose Folder");
         chooseFolderButton.setOnAction(event -> {
             File directory = DirectoryReader.openDirectoryDialogue(stage);
             updateList(directory, acceptedExtensions); 
         }); 
 
-        fileList = new ListView(); //add file representation here 
-        fileLabels = new ArrayList<Label>(); 
-
-        layout.add(fileList, 0, 0, 2, 5); 
         layout.add(chooseFolderButton, 2, 0); 
 
         layout.setGridLinesVisible(true);
@@ -60,7 +53,13 @@ public class Client extends Application
         //print files 
         for(File file : files)
         {
-            System.out.println(file.getName()); 
+            System.out.println(file.getName());
+                        //string -> file -> string : REFACTOR 
+            Media media = new Media(file.getPath()); 
+            MediaPlayer mediaPlayer = new MediaPlayer(media); 
+            MediaView mediaView = new MediaView(mediaPlayer);  
+
+            layout.add(mediaView, 0, 0, 2, 2); 
         }
     }
 }
