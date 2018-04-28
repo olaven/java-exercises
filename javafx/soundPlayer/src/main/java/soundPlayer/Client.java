@@ -1,6 +1,7 @@
 package soundPlayer;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.Arrays;
 
 import java.io.File; 
@@ -14,6 +15,7 @@ import javafx.scene.Scene;
 import javafx.scene.layout.GridPane; 
 import javafx.scene.control.Label;
 import javafx.scene.control.Button;
+import javafx.scene.control.ListView; 
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer; 
 import javafx.scene.media.MediaView; 
@@ -24,14 +26,22 @@ import javafx.scene.media.MediaView;
  */
 public class Client extends Application
 {
+    //global to be accessible for updates 
+    ListView fileList = new ListView(); 
+    MediaView mediaView = new MediaView(); 
+
     public void start(Stage stage)
     {
         GridPane gridPane = new GridPane(); 
 
         Button chooseDirectoryButton = new Button ("Choose directory"); 
-        chooseDirectoryButton.setOnAction(ActionEvent e -> {
+        /*chooseDirectoryButton.setOnAction(ActionEvent e -> {
             DirectoryReader.openDirectoryDialogue(stage); 
-        }); 
+        }); */
+
+        gridPane.add(fileList, 0, 0, 1, 4); 
+        gridPane.add(chooseDirectoryButton, 1, 0); 
+
 
         Scene scene = new Scene(gridPane, 400, 400); 
         stage.setScene(scene); 
@@ -45,6 +55,7 @@ public class Client extends Application
     public void updateList()
     {
         //update files visible to user 
+        
     }
 
     /**
