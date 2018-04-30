@@ -1,3 +1,5 @@
+import java.util.ArrayList; 
+
 import javafx.scene.layout.GridPane;
 import javafx.scene.control.Label; 
 
@@ -35,8 +37,14 @@ public class Renderer
         return board; 
     }
 
+    /**
+     * Updates board and puts in symbols based on the square.symbol 
+     * @param board the board to update 
+     */
     public static void RenderBoard(Board board) throws Exception
     {
-        throw new Exception("setMark is not implemented");
+        ArrayList<Square> squares = board.getSquares();
+        //RENDER THE BOARD BASED ON SYMBOL IN SQUARE 
+        throw new Exception("RENDER THE BOARD BASED ON SYMBOL IN SQUARE "); 
     }
 }

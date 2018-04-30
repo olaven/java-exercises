@@ -1,5 +1,10 @@
 import java.util.HashMap; 
+import java.util.ArrayList; 
+
 import javafx.scene.layout.GridPane;
+import javafx.scene.Node; 
+
+import javafx.collections.ObservableList;
 
 /**
  * Board 
@@ -42,6 +47,19 @@ public class Board extends GridPane
         if(!squares.containsValue(square))
             throw new Exception("Square did not exist"); 
         squares.remove(square);            
+    }
+
+    /**
+     * Get squares registered on board 
+     */
+    public ArrayList<Square> getSquares()
+    {  
+        ArrayList<Square> list = new ArrayList<Square>(); 
+        for(Square square : squares.values())
+        {
+            list.add(square); 
+        }
+        return list; 
     }
 
     private void setWidth(int width)
