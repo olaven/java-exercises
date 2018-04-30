@@ -30,7 +30,7 @@ public class DirectoryReader
      * Return a list with all files in directory
      * as ArrayList
      * @param directory directory to search 
-     * @param filter list of supported extensions
+     * @param filter list of supported extensions (without '.')
      */
     public static ArrayList<File> getFilesFromDirectory(File directory, ArrayList<String> filter) //implementer filter her 
     {
