@@ -9,5 +9,5 @@ public class Thermometer extends HighLowMeter
     {
         super(lowest, highest, location, working);
     }
-
 }
+

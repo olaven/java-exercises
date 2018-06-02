@@ -1,5 +1,10 @@
 public abstract class HighLowMeter extends Meter
 {
+
+    public static void main(String[] args) {
+        Thermometer meter = new Thermometer(0, 20, 20, true); 
+        System.out.println(meter.toString()); 
+    }
     private double lowest;
     private double highest;
 
@@ -21,8 +26,8 @@ public abstract class HighLowMeter extends Meter
     {
         return "" 
         + super.toString()
-        + "\nlowest: " + lowest
-        + "\nhighest: " + highest; 
+        + "\n lowest: " + lowest
+        + "\n highest: " + highest; 
     }
 
     public double getLowest() {

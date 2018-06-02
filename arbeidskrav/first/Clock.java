@@ -2,7 +2,7 @@ public class Clock extends Meter
 {
     private double interval; 
 
-    public Clock(double interval, int id, int location, boolean working)
+    public Clock(double interval, int location, boolean working)
     {
         super(location, working); 
         setInterval(interval); 
