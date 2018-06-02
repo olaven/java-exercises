@@ -15,7 +15,7 @@ public class Client
 
         for(Meter meter : archive.getMeters())
         {
-            System.out.println(meter.toString()); 
+            System.out.println(question.toString()); 
         }
 
         System.out.println("-------------------------------------------------");
@@ -45,7 +45,7 @@ public class Client
         archive.add(new Thermometer(0, 200, 44, true)); 
         System.out.println("\n\n\n"); 
         for (Meter meter : archive.getMeters()) {
-            System.out.println(meter.toString());
+            System.out.println(question.toString());
         }
 
 
