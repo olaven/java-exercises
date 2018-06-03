@@ -15,13 +15,14 @@ public class Client
         Client.print("file.txt"); 
     }
 
-    public static void write(String path, String content)
+    public static void write(String path, String content) 
     {
         BufferedWriter writer; 
         try
         {
             writer = new BufferedWriter(new FileWriter(path));
             writer.write(content); 
+            writer.close();
         }
         catch(FileNotFoundException e)
         {
@@ -30,7 +31,7 @@ public class Client
         catch(IOException e)
         {
             System.out.println("An error occured when writing"); 
-        }
+        } 
     }
 
     public static void print(String path)
