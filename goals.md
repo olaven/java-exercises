@@ -25,7 +25,12 @@
 			* Dette kan gjøres ved å ha en privat konstruktør, men tilby en statisk metode som returnerer 
 			den samme instansen hver gang. 
 		* Decorator 
-			* Et pattern hvor man utvider funksjonalitet til en k
+			* Et pattern hvor man utvider funksjonalitet til en klasse ved sende det gjennom en annen klasse (revisit)
+		* Factory
+			* Å lage en klasse (factory) som lager andre klasser. For eksempel en FruitFactory som lager Apple, Orange og Lemon
+		* Observer 
+			* En klasse som har metoder for å håndtere ting som skjer i andre klasser. Dersom tilstanden i en klasse 
+			endrer seg på et punkt, kalles metoden i observer-klassen. For eksempel en Controller som lytter på endringer i en applikasjons tilstand. 
 ## Ferdigheter 
 * Definere spesialiseringer av klasser gjennom arv 
 * Beherske bruk av abstrakte klasser og interfaces 
