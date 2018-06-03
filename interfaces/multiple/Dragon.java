@@ -1,5 +1,9 @@
 public class Dragon implements CanFly, CanWalk
 {
+    public static void main(String[] args) {
+        Dragon d = new Dragon(); 
+    }
+
     public void fly()
     {
         System.out.println("Implementation of flying"); 

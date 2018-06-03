@@ -10,5 +10,5 @@
  */
 public interface CanFly
 {
-    public void fly(); 
+    void fly();
 }
