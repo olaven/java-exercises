@@ -13,9 +13,6 @@ public class Client
         Client.print("file.txt"); 
         Client.write("file.txt", "This is new content"); 
         Client.print("file.txt"); 
-
-        Object obj = new Object(); 
-        obj.equals()
     }
 
     public static void write(String path, String content)
