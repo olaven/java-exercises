@@ -57,7 +57,7 @@ public class Client extends Application
                 }
             }
         });
-
+        
         register.setOnAction(event -> {
             stage.setScene(registerScene);
         });
