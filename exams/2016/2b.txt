@@ -1,0 +1,6 @@
+Metode 1 i SuperClass
+Metode 2 i Superclass 
+Metode 1 i subClass1 
+Metode 2 i SuperClass 
+Metode 1 i SubClass2 
+Metode 1 i SubClass1 
