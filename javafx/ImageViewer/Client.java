@@ -12,6 +12,9 @@ import javafx.scene.control.Alert.AlertType;
 import javafx.scene.image.Image; 
 import javafx.scene.image.ImageView; 
 
+/**
+ * Viser ingenting 
+ */
 public class Client extends Application
 {
     Scene scene; 
