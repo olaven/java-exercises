@@ -1,4 +1,5 @@
 public class Node<T> {
-    T element; 
+    T value; 
     Node next; 
+    Node previous; 
 }
