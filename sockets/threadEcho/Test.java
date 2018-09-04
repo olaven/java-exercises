@@ -1,8 +1,8 @@
 import java.util.ArrayList;
 import java.util.Scanner;
 /** 
+ * Demo for this threadEcho-example
  * @author @olaven
- * Test
  */
 public class Test {
 
