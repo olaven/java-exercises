@@ -1,3 +1,7 @@
+/**
+ * Bubblesort
+ * @author olaven
+ */
 public class BubbleSort<T extends Comparable> {
 
     public static void main(String[] args) {
@@ -12,23 +16,18 @@ public class BubbleSort<T extends Comparable> {
     }
  
     public static Comparable[] sort(Comparable[] array) {
-        while(!BubbleSort.isSorted(array)) {          
+        boolean swapped = true; 
+        while(swapped) {          
+            swapped = false; 
             for (int i = 0; i < array.length - 1; i++) {
-                if(array[i].compareTo(array[i + 1]) >= 0) {
+                if(array[i].compareTo(array[i + 1]) > 0) {
                     array = BubbleSort.exchange(i, i + 1, array); 
+                    swapped = true; 
                 }
             }
         }
         
         return array; 
-    }
-
-    private static boolean isSorted(Comparable[] array) {
-        for (int i = 0; i < array.length - 1; i++) {
-            if(array[i].compareTo(array[i + 1]) > 0) 
-                return false; 
-        }
-        return true; 
     }
 
     private static Comparable[] exchange(int i, int j, Comparable[] array) {
