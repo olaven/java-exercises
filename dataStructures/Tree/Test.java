@@ -1,21 +1,19 @@
+import java.util.Random;
 /**
  * Test
  */
 public class Test {
 
     public static void main(String[] args) {
-        BinaryTreeMap<String, String> map = new BinaryTreeMap(); 
+        Random random = new Random(); 
+        BinaryTreeMap<Integer, String> map = new BinaryTreeMap(); 
 
-        String[][] keyValues = new String[][]
-        {
-            {"nøkkel", "verdien"}, 
-            {"Olav", "Guro"}, 
-            {"Elon", "Ball"}, 
-            {"this is", "something"}
-        }; 
 
-        for (int i = 0; i < keyValues.length; i++) {
-            System.out.println(keyValues[i][0] + " - " + keyValues[i][1]); 
+        int amount = 10000; 
+        for (int i = 0; i < amount; i++) {
+            map.put(i, "random value: " + random.nextInt(200)); 
         }
+        System.out.println("All items added"); 
+        System.out.println(map.get(amount / 2)); 
     }
 }
